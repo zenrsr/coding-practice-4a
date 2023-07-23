@@ -14,11 +14,11 @@ Content-Type: application/json
 ###
 
 // API 3
-GET http://localhost:3010/players/2/
+GET http://localhost:3010/players/1/
 ###
 
 // API 4
-PUT http://localhost:3010/players/1/
+PUT http://localhost:3010/players/5/
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 ###
 
 // API 5
-DELETE http://localhost:3010/players/7/
+DELETE http://localhost:3010/players/1/

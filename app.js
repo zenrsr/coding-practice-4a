@@ -40,21 +40,23 @@ app.get("/players/", async (request, response) => {
 });
 // API 2
 app.post("/players/", async (request, response) => {
-  const { playerId, playerName, jerseyNumber, role } = request.body;
+  const { playerName, jerseyNumber, role } = request.body;
   const getQuery = `
-        INSERT INTO cricket_team (
-            player_name,
-            jersey_number,
-            role
-        ) VALUES (
+        INSERT INTO cricket_team (player_name,jersey_number,role)
+        VALUES (
             ${playerName},
             ${jerseyNumber},
             ${role}
         );`;
-  const x = await db.run(getQuery);
-  const id_of_player = x.lastID;
-  console.log({ playerId: id_of_player });
-  response.send("Player Added to Team");
+  try {
+    const x = await db.run(getQuery);
+    console.log(x);
+    const playerId = x.lastID;
+    console.log({ playerId: playerId });
+    response.send("Player Added to Team");
+  } catch (e) {
+    console.log(`${e.message}`);
+  }
 });
 // API 3
 app.get("/players/:playerId/", async (request, response) => {
@@ -76,10 +78,13 @@ app.put("/players/:playerId/", async (request, response) => {
             jersey_number = ${jerseyNumber},
             role = ${role}
         WHERE 
-            playerId = ${playerId}
-    ;`;
-  const x = await db.run(getQuery);
-  response.send("Player Details Updated");
+            player_id = ${playerId};`;
+  try {
+    const x = await db.run(getQuery);
+    response.send("Player Details Updated");
+  } catch (e) {
+    console.log(`${e.message}`);
+  }
 });
 // APi 5
 app.delete("/players/:playerId/", async (request, response) => {
