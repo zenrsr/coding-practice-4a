@@ -44,10 +44,11 @@ app.post("/players/", async (request, response) => {
   const getQuery = `
         INSERT INTO cricket_team (player_name,jersey_number,role)
         VALUES (
-            ${playerName},
+            '${playerName}',
             ${jerseyNumber},
-            ${role}
-        );`;
+            '${role}'
+        );
+        `;
   try {
     const x = await db.run(getQuery);
     console.log(x);
@@ -74,11 +75,12 @@ app.put("/players/:playerId/", async (request, response) => {
   const getQuery = `
         UPDATE cricket_team
         SET 
-            player_name = ${playerName},
+            player_name = '${playerName}',
             jersey_number = ${jerseyNumber},
-            role = ${role}
+            role = '${role}'
         WHERE 
-            player_id = ${playerId};`;
+            player_id = ${playerId};
+            `;
   try {
     const x = await db.run(getQuery);
     response.send("Player Details Updated");

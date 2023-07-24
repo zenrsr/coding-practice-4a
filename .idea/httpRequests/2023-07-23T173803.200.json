@@ -1,0 +1,50 @@
+[
+  {
+    "playerId": 2,
+    "playerName": "Trivi",
+    "jerseyNumber": 3,
+    "role": "All-rounder"
+  },
+  {
+    "playerId": 3,
+    "playerName": "Babu",
+    "jerseyNumber": 18,
+    "role": "Batsman"
+  },
+  {
+    "playerId": 4,
+    "playerName": "Venkat",
+    "jerseyNumber": 19,
+    "role": "Batsman"
+  },
+  {
+    "playerId": 5,
+    "playerName": "Vamsi",
+    "jerseyNumber": 2,
+    "role": "Batsman"
+  },
+  {
+    "playerId": 8,
+    "playerName": "Chanakya",
+    "jerseyNumber": 1,
+    "role": "Bowler"
+  },
+  {
+    "playerId": 9,
+    "playerName": "Vinod",
+    "jerseyNumber": 8,
+    "role": "Wicket-keeper"
+  },
+  {
+    "playerId": 10,
+    "playerName": "Gowtham",
+    "jerseyNumber": 6,
+    "role": "Bowler"
+  },
+  {
+    "playerId": 11,
+    "playerName": "Varshith",
+    "jerseyNumber": 11,
+    "role": "All-rounder"
+  }
+]
